@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Rentalcars/static/css/main.7acaea2f.css",
+    "main.js": "/Rentalcars/static/js/main.a68c5e50.js",
+    "index.html": "/Rentalcars/index.html",
+    "main.7acaea2f.css.map": "/Rentalcars/static/css/main.7acaea2f.css.map",
+    "main.a68c5e50.js.map": "/Rentalcars/static/js/main.a68c5e50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.a68c5e50.js"
+  ]
+}
