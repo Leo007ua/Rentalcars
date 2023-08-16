@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/Rentalcars/static/css/main.7acaea2f.css",
-    "main.js": "/Rentalcars/static/js/main.a68c5e50.js",
+    "main.css": "/Rentalcars/static/css/main.b5320759.css",
+    "main.js": "/Rentalcars/static/js/main.5908bf46.js",
+    "static/js/415.1267d4d3.chunk.js": "/Rentalcars/static/js/415.1267d4d3.chunk.js",
+    "static/js/875.223e7b8e.chunk.js": "/Rentalcars/static/js/875.223e7b8e.chunk.js",
+    "static/js/395.a6e9574d.chunk.js": "/Rentalcars/static/js/395.a6e9574d.chunk.js",
     "index.html": "/Rentalcars/index.html",
-    "main.7acaea2f.css.map": "/Rentalcars/static/css/main.7acaea2f.css.map",
-    "main.a68c5e50.js.map": "/Rentalcars/static/js/main.a68c5e50.js.map"
+    "main.b5320759.css.map": "/Rentalcars/static/css/main.b5320759.css.map",
+    "main.5908bf46.js.map": "/Rentalcars/static/js/main.5908bf46.js.map",
+    "415.1267d4d3.chunk.js.map": "/Rentalcars/static/js/415.1267d4d3.chunk.js.map",
+    "875.223e7b8e.chunk.js.map": "/Rentalcars/static/js/875.223e7b8e.chunk.js.map",
+    "395.a6e9574d.chunk.js.map": "/Rentalcars/static/js/395.a6e9574d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.a68c5e50.js"
+    "static/css/main.b5320759.css",
+    "static/js/main.5908bf46.js"
   ]
 }
