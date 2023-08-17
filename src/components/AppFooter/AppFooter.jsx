@@ -9,7 +9,7 @@ export function AppFooter() {
                 &copy; {new Date().getFullYear()} Developed by
             </FooterText>
             <FooterLink
-                href="https://github.com/Leo007ua"
+                href="https://github.com/Leo007ua/Rentalcars"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Github"

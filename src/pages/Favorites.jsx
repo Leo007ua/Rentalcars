@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 const Favorites = () => {
   return (
-    <div>Favorites</div>
-  )
-}
+    <>
+      <div>Favorites</div>
+      <button type="button">Button</button>
+    </>
+  );
+};
 
-export default Favorites
+export default Favorites;

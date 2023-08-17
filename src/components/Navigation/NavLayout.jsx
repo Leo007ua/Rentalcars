@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Nav } from './Navigation';
+import { Navigation } from './Navigation';
 import { AppFooter } from '../AppFooter/AppFooter';
 
 
@@ -7,7 +7,7 @@ export const NavLayout = () => {
 
   return (
     <div>
-      <Nav/>
+      <Navigation/>
       <main>
         <Outlet />
       </main>

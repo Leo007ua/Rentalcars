@@ -1,7 +1,7 @@
 import React from "react";
 import { NavStyled, StyledLink } from "./NavigationStyled";
 
-export const Nav = () => {
+export const Navigation = () => {
   return (
     <NavStyled>
       <StyledLink to="/">Home</StyledLink>

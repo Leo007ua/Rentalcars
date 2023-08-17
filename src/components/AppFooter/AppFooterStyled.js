@@ -8,12 +8,12 @@ export const StyledFooter = styled.footer`
     width: 500px;
     margin-left: auto;
     margin-right: auto;
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     bottom: 0;
     width: 100%;
     border: 2px solid white;
-    background-color: aquamarine;
+    background-color: lightgray;
     box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
 `;
 export const FooterText = styled.p`
