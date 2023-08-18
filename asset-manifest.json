@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/Rentalcars/static/css/main.e6c13ad2.css",
-    "main.js": "/Rentalcars/static/js/main.09b9ec81.js",
-    "static/js/415.1267d4d3.chunk.js": "/Rentalcars/static/js/415.1267d4d3.chunk.js",
-    "static/js/710.0d36ebc5.chunk.js": "/Rentalcars/static/js/710.0d36ebc5.chunk.js",
-    "static/js/395.4a43a3d6.chunk.js": "/Rentalcars/static/js/395.4a43a3d6.chunk.js",
+    "main.css": "/Rentalcars/static/css/main.b27ec5ad.css",
+    "main.js": "/Rentalcars/static/js/main.97fa49fa.js",
+    "static/js/761.6224561d.chunk.js": "/Rentalcars/static/js/761.6224561d.chunk.js",
+    "static/js/63.6ffe8ddd.chunk.js": "/Rentalcars/static/js/63.6ffe8ddd.chunk.js",
+    "static/js/395.a6e9574d.chunk.js": "/Rentalcars/static/js/395.a6e9574d.chunk.js",
+    "static/media/arenda-auto-antalya-turkey.jpg": "/Rentalcars/static/media/arenda-auto-antalya-turkey.46ffc9866c329ff6264b.jpg",
     "index.html": "/Rentalcars/index.html",
-    "main.e6c13ad2.css.map": "/Rentalcars/static/css/main.e6c13ad2.css.map",
-    "main.09b9ec81.js.map": "/Rentalcars/static/js/main.09b9ec81.js.map",
-    "415.1267d4d3.chunk.js.map": "/Rentalcars/static/js/415.1267d4d3.chunk.js.map",
-    "710.0d36ebc5.chunk.js.map": "/Rentalcars/static/js/710.0d36ebc5.chunk.js.map",
-    "395.4a43a3d6.chunk.js.map": "/Rentalcars/static/js/395.4a43a3d6.chunk.js.map"
+    "main.b27ec5ad.css.map": "/Rentalcars/static/css/main.b27ec5ad.css.map",
+    "main.97fa49fa.js.map": "/Rentalcars/static/js/main.97fa49fa.js.map",
+    "761.6224561d.chunk.js.map": "/Rentalcars/static/js/761.6224561d.chunk.js.map",
+    "63.6ffe8ddd.chunk.js.map": "/Rentalcars/static/js/63.6ffe8ddd.chunk.js.map",
+    "395.a6e9574d.chunk.js.map": "/Rentalcars/static/js/395.a6e9574d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.09b9ec81.js"
+    "static/css/main.b27ec5ad.css",
+    "static/js/main.97fa49fa.js"
   ]
 }
