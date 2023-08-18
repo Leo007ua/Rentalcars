@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CardStyled, CardListStyled} from './CarCardStyled';
+import { CardStyled, CardListStyled, HeartButton} from './CarCardStyled';
 import ModalComponent from 'components/Modal/Modal';
 import Button from 'components/Button/Button';
 
@@ -24,7 +24,7 @@ const CarCard = ({ car, isfavorite, onToggleFavorite }) => {
   };
 
   return (
-    <CardListStyled  key={id}>
+    <CardListStyled>
       <CardStyled src={img} alt={model} loading="lazy"/>
       <h3>
         {make} <span>{model}</span>, {year}
@@ -41,7 +41,7 @@ const CarCard = ({ car, isfavorite, onToggleFavorite }) => {
         onClick={onToggleFavorite}
         isfavorite={isfavorite ? "true" : "false"}
       >
-        Favorite ❤️
+        Favorite❤️
       </Button>
 
       {isModalOpen && (
