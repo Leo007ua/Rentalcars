@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { CardContainerStyled, CardListStyled } from './CarCardStyled';
+import { CardStyled, CardListStyled, HeartButton} from './CarCardStyled';
 import ModalComponent from 'components/Modal/Modal';
+import Button from 'components/Button/Button';
 
-const CarCard = ({ car }) => {
+const CarCard = ({ car, isfavorite, onToggleFavorite }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const {
@@ -24,7 +25,7 @@ const CarCard = ({ car }) => {
 
   return (
     <CardListStyled>
-      <CardContainerStyled $urlimg={img} />
+      <CardStyled src={img} alt={model} loading="lazy"/>
       <h3>
         {make} <span>{model}</span>, {year}
       </h3>
@@ -33,9 +34,15 @@ const CarCard = ({ car }) => {
         {address} | {rentalCompany} | {type} | {model} | {id} |{' '}
         {functionalities[0]}
       </p>
-      <button type="button" onClick={handleLearnMoreClick}>
-        LEARN MORE
-      </button>
+      <Button type="button" variant="primary" onClick={handleLearnMoreClick}>
+        Learn more
+      </Button>
+      <HeartButton
+        onClick={onToggleFavorite}
+        isfavorite={isfavorite ? "true" : "false"}
+      >
+        Favorite❤️
+      </HeartButton>
 
       {isModalOpen && (
         <ModalComponent car={car} onCloseModal={() => setIsModalOpen(false)} />

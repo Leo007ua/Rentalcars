@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { CloseButton, ModalStyled } from './ModalStyled';
+import Button from 'components/Button/Button';
 
 function ModalComponent({ onCloseModal, car }) {
   const handleClickOverlay = evt => {
@@ -8,7 +9,7 @@ function ModalComponent({ onCloseModal, car }) {
       onCloseModal();
     }
   };
-  
+
   useEffect(() => {
     const handleKeyDown = evt => {
       if (evt.code === 'Escape') {
@@ -36,26 +37,29 @@ function ModalComponent({ onCloseModal, car }) {
 
   return (
     <ModalStyled className="overlay" onClick={handleClickOverlay}>
-         
-        <div className="modal-content">
-        <CloseButton onClick={onCloseModal}>
-          &times;
-        </CloseButton>
-        <img src={img} alt={`${make} ${model}`} />
-        <h2>{make} {model}</h2>
-        <p>Year: {year}</p>
+      <div className="modal-content">
+        <CloseButton onClick={onCloseModal}>&times;</CloseButton>
+        <div>
+          <img src={img} alt={model} />
+        </div>
+
+        <h2>
+          {make} <span>{model}</span>
+        </h2>
         <p>Rental Price: {rentalPrice}</p>
+        <p>Year: {year}</p>
         <p>Rental Company: {rentalCompany}</p>
         <p>Address: {address}</p>
         <p>Type: {type}</p>
-        <p>Functionalities: {functionalities.join(', ')}</p>
+        <span>Accessories and functionalities:</span>
+        <p> {functionalities.join(', ')}</p>
 
         <a href="tel:+380730000000" target="_blank" rel="noopener noreferrer">
-          <button type='button'>Rental car</button>
+          <Button type="button" variant="secondary">
+            Rental car
+          </Button>
         </a>
       </div>
-        
-    
     </ModalStyled>
   );
 }

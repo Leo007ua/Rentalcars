@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
-  border-radius: 8px;
-  background-color: azure;
-  font-size: 18px;
-  padding: 12px 20px;
+  /* border-radius: 8px; */
+  /* background-color: azure; */
+  padding: 12px 99px;
   text-align: center;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
- 
+  /* gap: 12px; */
+
   cursor: pointer;
+
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
   &:hover,
   &:focus {
@@ -24,16 +24,40 @@ export const StyledButton = styled.button`
     border: none;
   }
   &.primary {
-    background-color: rgb(125, 31, 255);
-    color: #fff;
+    /* display: flex; 
+    width: 274px;
+    height: 44px; */
+    padding: 12px 99px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #3470ff;
+    border: none;
+    color: var(--white, #fff);
+    font-family: Manrope;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
     &:hover,
     &:focus {
-      background-color: rgba(125, 31, 255, 0.9);
+      background-color: #0b44cd;
     }
   }
   &.secondary {
+    width: 168px;
+    margin-top: 31px;
+    border: none;
+    padding: 12px 50px;
     background-color: #ff9e1f;
-    color: #000;
+    border-radius: 12px;
+    background-color: #3470ff;
+    color: var(--white, #fff);
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    margin-left: 40px;
     &:hover,
     &:focus {
       background-color: rgba(255, 158, 31, 0.9);

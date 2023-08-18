@@ -1,6 +1,7 @@
 export const initialState = {
     cars: null,
-    filter: null,
+    favorites: [],
+    
   };
   
   export const initialStateRoot = {

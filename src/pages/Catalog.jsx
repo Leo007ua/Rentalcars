@@ -1,6 +1,8 @@
 import CarList from 'components/CarList/CarList';
+// import Form from 'components/Form/Form';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getCarsCatalogThunk } from 'redux/Thunk/Thunk';
 import { selectCars } from 'redux/selector';
 
@@ -16,6 +18,7 @@ const Catalog = () => {
 
   return (
     <>
+      {/* <Form/> */}
       {cars && <CarList cars={cars} />}
     </>
   );

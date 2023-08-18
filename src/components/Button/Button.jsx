@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { StyledButton } from './Button.styled';
+import { StyledButton } from './ButtonStyled';
 
 function Button({ children, variant = 'none', ...restProps }) {
   // "none" | "no-border" | "primary" | "secondary"

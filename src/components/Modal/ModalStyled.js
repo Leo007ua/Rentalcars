@@ -26,23 +26,27 @@ export const ModalStyled = styled.div`
       height: 314px;
       object-fit: cover;
       border-radius: 12px;
-      margin: 15px 36px 0;
+      margin: 15px 36px;
     }
 
     h2 {
-        margin: 15px 36px 0;
+        margin: 15px 40px;
     }
 
     p {
-        margin: 15px 36px 0;
+        margin: 15px 40px;
+    }
+    span {
+      margin: 15px 40px;
+      
     }
   }
 `;
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 16px;
+  right: 16px;
   border: none;
   background: none;
   font-size: 24px;
