@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledButton = styled.button`
-  /* border-radius: 8px; */
-  /* background-color: azure; */
   padding: 12px 99px;
   text-align: center;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  /* gap: 12px; */
-
   cursor: pointer;
 
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
@@ -20,20 +16,22 @@ export const StyledButton = styled.button`
   }
 
   &.no-border {
-    border-radius: 0;
+    margin-top: 5px;
+    border-radius: 12px;
+    background-color: #fff;
     border: none;
+    cursor: pointer;
+    /* font-size: 20px; */
+    color: ${({ isfavorite }) => (isfavorite === 'true' ? 'red' : 'black')};
   }
   &.primary {
-    /* display: flex; 
-    width: 274px;
-    height: 44px; */
     padding: 12px 99px;
     justify-content: center;
     align-items: center;
     border-radius: 12px;
     background-color: #3470ff;
     border: none;
-    color: var(--white, #fff);
+    color: #fff;
     font-family: Manrope;
     font-size: 14px;
     font-weight: 600;
@@ -45,7 +43,7 @@ export const StyledButton = styled.button`
   }
   &.secondary {
     width: 168px;
-    margin-top: 31px;
+    margin-top: 20px;
     border: none;
     padding: 12px 50px;
     background-color: #ff9e1f;
@@ -60,7 +58,7 @@ export const StyledButton = styled.button`
     margin-left: 40px;
     &:hover,
     &:focus {
-      background-color: rgba(255, 158, 31, 0.9);
+      background-color: #0b44cd;
     }
   }
 `;

@@ -5,14 +5,36 @@ import CarCard from 'components/CarCard/CarCard';
 import { useSelector } from 'react-redux';
 import { selectCars } from 'redux/selector';
 import Pagination from 'components/Pagination/Pagination';
+import Form from 'components/Form/Form';
 
 const CarList = () => {
   const cars = useSelector(selectCars);
-  const carsPerPage = 8; // к-ть оголошень на сторінці
+  const carsPerPage = 8;
   const [currentPage, setCurrentPage] = useState(1);
-  const [favoriteCars, setFavoriteCars] = useState([]); // Стейт для улюблених оголошень
+  const [favoriteCars, setFavoriteCars] = useState([]);
+  const [searchParams, setSearchParams] = useState({
+    brand: '',
+    year: '',
+    price: '',
+  });
 
-  // індекси початку та кінця поточної сторінки
+  const [availableBrands, setAvailableBrands] = useState([]);
+  const [availableYears, setAvailableYears] = useState([]);
+  const [availablePrices, setAvailablePrices] = useState([]);
+
+  useEffect(() => {
+    const brands = [...new Set(cars.map(car => car.make))];
+    setAvailableBrands(brands);
+
+    const years = [...new Set(cars.map(car => car.year))];
+    setAvailableYears(years);
+
+    const prices = [
+      ...new Set(cars.map(car => parseInt(car.rentalPrice.slice(1)))),
+    ];
+    setAvailablePrices(prices);
+  }, [cars]);
+
   const indexOfLastCar = currentPage * carsPerPage;
   const indexOfFirstCar = indexOfLastCar - carsPerPage;
   const currentCars = cars.slice(indexOfFirstCar, indexOfLastCar);
@@ -21,7 +43,6 @@ const CarList = () => {
     setCurrentPage(pageNumber);
   };
 
-  // Завантаження улюблених оголошень з LocalStorage під час ініціалізації
   useEffect(() => {
     const storedFavoriteCars = localStorage.getItem('favoriteCars');
     if (storedFavoriteCars) {
@@ -29,13 +50,11 @@ const CarList = () => {
     }
   }, []);
 
-  // Збереження улюблених оголошень в LocalStorage після зміни
   useEffect(() => {
-    localStorage.setItem("favoriteCars", JSON.stringify(favoriteCars));
+    localStorage.setItem('favoriteCars', JSON.stringify(favoriteCars));
   }, [favoriteCars]);
 
-  // Додавання або видалення оголошення зі списку улюблених
-  const toggleFavorite = (car) => {
+  const toggleFavorite = car => {
     if (favoriteCars.includes(car)) {
       setFavoriteCars(favoriteCars.filter(favCar => favCar.id !== car.id));
     } else {
@@ -43,22 +62,45 @@ const CarList = () => {
     }
   };
 
+  const handleSearch = searchParams => {
+    setSearchParams(searchParams);
+    setCurrentPage(1);
+  };
+
+  const filterCars = car => {
+    return (
+      (!searchParams.brand ||
+        car.make.toLowerCase().includes(searchParams.brand.toLowerCase())) &&
+      (!searchParams.year || car.year === parseInt(searchParams.year)) &&
+      (!searchParams.price || car.price <= parseInt(searchParams.price))
+    );
+  };
+
+  const filteredCars = currentCars.filter(filterCars);
+
   return (
     <div>
+      <Form
+        availableBrands={availableBrands}
+        availableYears={availableYears}
+        availablePrices={availablePrices}
+        onSearch={handleSearch}
+      />
+
       <StyledList>
-        {currentCars.map(car => (
+        {filteredCars.map(car => (
           <CarCard
             key={car.id}
             car={car}
-            isfavorite={favoriteCars.includes(car)} // Передача інформації про улюбленість
-            onToggleFavorite={() => toggleFavorite(car)} // Передача функції toggleFavorite
+            isfavorite={favoriteCars.includes(car)}
+            onToggleFavorite={() => toggleFavorite(car)}
           />
         ))}
       </StyledList>
 
       <Pagination
         currentPage={currentPage}
-        totalCars={cars.length}
+        totalCars={filteredCars.length}
         carsPerPage={carsPerPage}
         onPageChange={handlePageChange}
       />

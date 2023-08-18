@@ -7,6 +7,7 @@ import { getCarsCatalogThunk } from 'redux/Thunk/Thunk';
 const carsSlice = createSlice({
   name: 'catalog',
   initialState,
+  
 
   extraReducers: builder => {
     builder.addCase(getCarsCatalogThunk.fulfilled, (state, action) => {
