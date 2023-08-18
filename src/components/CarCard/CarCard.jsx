@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CardStyled, CardListStyled, HeartButton} from './CarCardStyled';
+import { CardStyled, CardListStyled} from './CarCardStyled';
 import ModalComponent from 'components/Modal/Modal';
 import Button from 'components/Button/Button';
 
