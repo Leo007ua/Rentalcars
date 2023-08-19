@@ -14,7 +14,7 @@ const Pagination = ({ currentPage, totalCars, carsPerPage, onPageChange }) => {
         page => (
           <PaginationItem key={page}>
             <PaginationButton
-              active={currentPage === page ? 'true' : undefined}
+              $active={currentPage === page ? 'true' : undefined}
               onClick={() => onPageChange(page)}
             >
               {page}

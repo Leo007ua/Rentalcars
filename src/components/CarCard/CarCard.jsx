@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { CardStyled, CardListStyled } from './CarCardStyled';
+
 import ModalComponent from 'components/Modal/Modal';
 import Button from 'components/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCars, selectFavoriteCars } from 'redux/selector';
+// import { selectCars, selectFavoriteCars } from 'redux/selector';
 import { deleteCarFavorite, findCarFavorite } from 'redux/Slices/favoriteSlice';
-import { ButtonHeart } from 'components/Button/ButtonHeart';
 
-const CarCard = ({ car, handleOnClick }) => {
+import { CardListStyled, CardStyled } from './CarCardStyled';
+import { ButtonHeart } from 'components/Button/ButtonHeart';
+import { selectCars, selectFavoriteCars } from 'redux/selector';
+
+const CarCard = ({ car }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const {
@@ -58,7 +61,7 @@ const CarCard = ({ car, handleOnClick }) => {
         onBtnHeartClick={onBtnHeartClick}
         heartColor={heartColor}
         isFavorite={isFavorite}
-      >Favorite</ButtonHeart>
+      />
       <h3>
         {make} <span>{model}</span>, {year}
       </h3>

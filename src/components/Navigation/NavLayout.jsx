@@ -4,6 +4,7 @@ import { AppFooter } from '../AppFooter/AppFooter';
 
 
 export const NavLayout = () => {   
+  
 
   return (
     <div>
@@ -11,7 +12,7 @@ export const NavLayout = () => {
       <main>
         <Outlet />
       </main>
-      <AppFooter/>
+      <AppFooter />
     </div>
   );
 };

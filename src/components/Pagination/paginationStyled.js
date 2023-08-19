@@ -20,8 +20,8 @@ export const PaginationButton = styled.button`
   font-size: 16px;
   transition: background-color 0.3s ease-in-out;
 
-  ${({ active }) =>
-    active &&
+  ${({ $active }) =>
+    $active &&
     `
     background-color: #007bff;
     color: #fff;

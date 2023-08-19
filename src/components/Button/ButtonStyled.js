@@ -71,7 +71,14 @@ export const StyledButton = styled.button`
     justify-content: center;
     align-items: center;
     border: none;
-    /* background-color: red; */
     background-color: transparent;
   }
+`;
+
+export const StyledBtnHeart = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
 `;

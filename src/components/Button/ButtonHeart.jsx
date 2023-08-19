@@ -1,10 +1,11 @@
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
-import { StyledBtn } from './ButtonStyled';
+import { StyledBtnHeart } from './ButtonStyled';
+
 
 
 export const ButtonHeart = ({ onBtnHeartClick, heartColor, isFavorite }) => {
   return (
-    <StyledBtn type="button" onClick={onBtnHeartClick}>
+    <StyledBtnHeart type="button" onClick={onBtnHeartClick}>
       {isFavorite ? (
         <AiFillHeart size={18} color="rgba(52, 112, 255, 1)" />
       ) : !heartColor ? (
@@ -12,6 +13,6 @@ export const ButtonHeart = ({ onBtnHeartClick, heartColor, isFavorite }) => {
       ) : (
         <AiFillHeart size={18} color="rgba(52, 112, 255, 1)" />
       )}
-    </StyledBtn>
+    </StyledBtnHeart>
   );
 };
