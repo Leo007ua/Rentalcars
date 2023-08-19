@@ -61,4 +61,17 @@ export const StyledButton = styled.button`
       background-color: #0b44cd;
     }
   }
+  &.hearts {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    /* background-color: red; */
+    background-color: transparent;
+  }
 `;

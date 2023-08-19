@@ -1,3 +1,3 @@
 export const selectCars = state => state.catalog.cars;
 
-export const selectFavorites = state => state.catalog.favorites;
+export const selectFavoriteCars = state => state.favorite.favoriteCars;

@@ -1,10 +1,14 @@
 export const initialState = {
     cars: null,
-    favorites: [],
+    filter: null,
     
   };
   
   export const initialStateRoot = {
     isLoading: false,
-    error: null,
+    error: '',
   };
+
+  export const initialStateFavorite = {
+    favoriteCars: [],
+  }

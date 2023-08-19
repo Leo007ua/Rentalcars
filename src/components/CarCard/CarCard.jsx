@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
-import { CardStyled, CardListStyled} from './CarCardStyled';
+import React, { useEffect, useState } from 'react';
+import { CardStyled, CardListStyled } from './CarCardStyled';
 import ModalComponent from 'components/Modal/Modal';
 import Button from 'components/Button/Button';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCars, selectFavoriteCars } from 'redux/selector';
+import { deleteCarFavorite, findCarFavorite } from 'redux/Slices/favoriteSlice';
+import { ButtonHeart } from 'components/Button/ButtonHeart';
 
-const CarCard = ({ car, isfavorite, onToggleFavorite }) => {
+const CarCard = ({ car, handleOnClick }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const {
@@ -23,9 +27,38 @@ const CarCard = ({ car, isfavorite, onToggleFavorite }) => {
     setIsModalOpen(true);
   };
 
+  const carsCatalog = useSelector(selectCars);
+  const favoriteCars = useSelector(selectFavoriteCars);
+  const dispatch = useDispatch();
+
+  const favouriteCar = carsCatalog.find(car => car.id === id);
+  const isFavorite = favoriteCars.find(car => car.id === id);
+
+  const [heartColor, setHeartColor] = useState(false);
+
+  useEffect(() => {
+    if (heartColor) setHeartColor(!heartColor);
+  }, [heartColor]);
+
+  const onBtnHeartClick = () => {
+    setHeartColor(!heartColor);
+
+    if (isFavorite) {
+      const deleteCar = favoriteCars.filter(car => car.id !== id);
+      dispatch(deleteCarFavorite(deleteCar));
+      return;
+    }
+    dispatch(findCarFavorite(favouriteCar));
+  };
+
   return (
     <CardListStyled>
-      <CardStyled src={img} alt={model} loading="lazy"/>
+      <CardStyled src={img} alt={model} loading="lazy" />
+      <ButtonHeart
+        onBtnHeartClick={onBtnHeartClick}
+        heartColor={heartColor}
+        isFavorite={isFavorite}
+      >Favorite</ButtonHeart>
       <h3>
         {make} <span>{model}</span>, {year}
       </h3>
@@ -37,12 +70,7 @@ const CarCard = ({ car, isfavorite, onToggleFavorite }) => {
       <Button type="button" variant="primary" onClick={handleLearnMoreClick}>
         Learn more
       </Button>
-      <Button type="button" variant="no-border"
-        onClick={onToggleFavorite}
-        isfavorite={isfavorite ? "true" : "false"}
-      >
-        Favorite❤️
-      </Button>
+      
 
       {isModalOpen && (
         <ModalComponent car={car} onCloseModal={() => setIsModalOpen(false)} />
